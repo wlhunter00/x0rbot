@@ -1,0 +1,31 @@
+{
+  "name": "x0rbot",
+  "version": "1.0.0",
+  "description": "Bot for the x0r Discord servrer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wlhunter00/x0rbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wlhunter00/x0rbot/issues"
+  },
+  "homepage": "https://github.com/wlhunter00/x0rbot#readme",
+  "dependencies": {
+    "@discordjs/builders": "^0.12.0",
+    "@discordjs/rest": "^0.3.0",
+    "discord-api-types": "^0.26.1",
+    "discord.js": "^13.6.0",
+    "dotenv": "^14.3.2",
+    "fs": "^0.0.1-security",
+    "nodemon": "^2.0.15"
+  }
+}
