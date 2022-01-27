@@ -20,21 +20,20 @@ module.exports = {
   async execute(interaction) {
     if (interaction.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR)) {
       console.log("This member is an admin");
-      const role = interaction.options.getRole("role-given");
+      const roleGiven = interaction.options.getRole("role-given");
+      const roleRequired = interaction.options.getRole("role-require");
 
-      // interaction.guild.members.cache
-      //   .filter((m) => !m.user.bot)
-      //   .forEach((member) => {
-      //     console.log(member.user.username);
-      //     // member.roles.add(role);
-      //   });
-
-      console.log(interaction.guild);
+      roleRequired.members
+        .filter((m) => !m.user.bot)
+        .forEach((member) => {
+          console.log(member.user.username);
+          member.roles.add(roleGiven);
+        });
 
       // interaction.member.roles.add(role);
 
       await interaction.reply({
-        content: `Command was run, everyone now is a ${role}`,
+        content: `Command was run, everyone in ${roleRequired}, now is also a ${roleGiven}`,
         ephemeral: true,
       });
     } else {
